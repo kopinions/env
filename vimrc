@@ -1,16 +1,19 @@
 "#### pathogne start --a plugin to manage the vim plugin#####
-execute pathogen#infect()
+"execute pathogen#infect()
 "#### pathogne end --a plugin to manage the vim plugin#####
 
 "################### basic config start #######################
 " enable plugin
-filetype plugin indent on
+" no campatible mode
+set nocompatible
+" disable the filetype detect
+filetype off 
 " enable syntax highlight
 syntax on
 " disable vi campatible mode
 set nocompatible
 " a color scheme
-colorscheme molokai
+"colorscheme molokai
 " highlighted the line which cursor now in
 set cursorline
 " a smart way to ingore letter case when in search 
@@ -39,6 +42,19 @@ set number
 
 "let mapleader=","
 
+
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'ctrlp.vim'
+Bundle 'AutoClose'
+Bundle 'ZenCoding.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle '_jsbeautify'
+Bundle 'The-NERD-tree'
+nnoremap <leader>_ff :call g:Jsbeautify()<CR>
 "################### basic config end #######################
 
 
@@ -62,7 +78,6 @@ map <C-n> :NERDTreeToggle<CR>
 " close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType=="primary") | q | endif
 "####### NERDTree end -explore the directory tree###########
-
 
 "########## zencoding start ---html programing #############
 " set expand shortcut = ctl+e
@@ -100,9 +115,5 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 
 
-
-
-
-
-
-
+filetype plugin indent on
+syntax on
