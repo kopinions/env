@@ -57,6 +57,7 @@ Bundle 'The-NERD-tree'
 Bundle '_jsbeautify'
 Bundle 'vim-json-bundle'
 Bundle 'The-NERD-Commenter'
+Bundle 'vim-coffee-script'
 ""Bundle 'Valloric/YouCompleteMe'
 "################### basic config end #######################
 
