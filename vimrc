@@ -31,8 +31,6 @@ set matchtime=10
 "colorscheme twilight
 colorscheme vividchalk
 "set cursorcolumn
-set background=light
-set scrolloff=3
 set guifont=Inconsolata:h15
 " magic 
 set magic
@@ -57,8 +55,8 @@ Bundle 'AutoClose'
 Bundle 'ZenCoding.vim'
 Bundle 'The-NERD-tree'
 Bundle '_jsbeautify'
-Bundle 'vim-json'
-Bundle 'NERD_commenter'
+Bundle 'vim-json-bundle'
+Bundle 'The-NERD-Commenter'
 ""Bundle 'Valloric/YouCompleteMe'
 "################### basic config end #######################
 
