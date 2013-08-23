@@ -1,17 +1,10 @@
-"#### pathogne start --a plugin to manage the vim plugin#####
-"execute pathogen#infect()
-"#### pathogne end --a plugin to manage the vim plugin#####
-
 "################### basic config start #######################
-" enable plugin
-" no campatible mode
+" disable vi campatible mode
 set nocompatible
 " disable the filetype detect
 filetype off 
 " enable syntax highlight
 syntax on
-" disable vi campatible mode
-set nocompatible
 " a color scheme
 "colorscheme molokai
 " highlighted the line which cursor now in
@@ -29,6 +22,18 @@ set noerrorbells
 " show match when insert bracket
 set showmatch
 set matchtime=10
+"colorscheme molokai
+"colorscheme solarized
+"colorscheme desert256
+"colorscheme codeschool
+"set t_Co=256
+"colorscheme distinguished
+"colorscheme twilight
+colorscheme vividchalk
+"set cursorcolumn
+set background=light
+set scrolloff=3
+set guifont=Inconsolata:h15
 " magic 
 set magic
 " set key to delete character
@@ -39,22 +44,22 @@ set cmdheight=1
 set laststatus=2
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
 set number
+set wildmenu
+set ruler
 
 "let mapleader=","
-
-
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-
 Bundle 'ctrlp.vim'
 Bundle 'AutoClose'
 Bundle 'ZenCoding.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle '_jsbeautify'
 Bundle 'The-NERD-tree'
-nnoremap <leader>_ff :call g:Jsbeautify()<CR>
+Bundle '_jsbeautify'
+Bundle 'vim-json'
+Bundle 'NERD_commenter'
+""Bundle 'Valloric/YouCompleteMe'
 "################### basic config end #######################
 
 
@@ -72,7 +77,7 @@ autocmd FileType coffee setlocal et sta sw=2 sts=2
 " automatic open the NERDTree when enter vim
 " autocmd vimenter * NERDTree
 " when no file is specfied NERDTree is opend
-autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd vimenter * if !argc() | NERDTree | endif
 " <C-n> is the control key of NERDTree
 map <C-n> :NERDTreeToggle<CR>
 " close vim if the only window left is NERDTree
@@ -114,6 +119,7 @@ let g:ctrlp_follow_symlinks=1
 let g:EasyMotion_leader_key = '<Leader>'
 
 
-
+" disable the filetype detect
 filetype plugin indent on
+" enable syntax highlight
 syntax on
