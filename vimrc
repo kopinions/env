@@ -4,7 +4,7 @@ set nocompatible
 " disable the filetype detect
 filetype off 
 " enable syntax highlight
-syntax on
+syntax off
 " a color scheme
 "colorscheme molokai
 " highlighted the line which cursor now in
@@ -26,8 +26,8 @@ set matchtime=10
 "colorscheme solarized
 "colorscheme desert256
 "colorscheme codeschool
-"set t_Co=256
-"colorscheme distinguished
+""set t_Co=256
+""colorscheme distinguished
 "colorscheme twilight
 colorscheme vividchalk
 "set cursorcolumn
@@ -49,6 +49,7 @@ set ruler
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 Bundle 'gmarik/vundle'
 Bundle 'ctrlp.vim'
 Bundle 'AutoClose'
@@ -61,10 +62,14 @@ Bundle 'vim-coffee-script'
 ""Bundle 'Valloric/YouCompleteMe'
 "################### basic config end #######################
 
+" disable the filetype detect
+filetype plugin indent on
+" enable syntax highlight
+syntax on
 
 "#################### coffeescript start ####################
 "# 打开 ~/.vimrc 加下面一行,可以实现保存时候自动编译成js文件
-autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+"autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 "# 我写成这样保存时可以实时看到编译结果
 autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
 autocmd FileType coffee setlocal et sta sw=2 sts=2
@@ -118,7 +123,3 @@ let g:ctrlp_follow_symlinks=1
 let g:EasyMotion_leader_key = '<Leader>'
 
 
-" disable the filetype detect
-filetype plugin indent on
-" enable syntax highlight
-syntax on
