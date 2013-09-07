@@ -70,7 +70,32 @@ Bundle 'vim-json-bundle'
 Bundle 'vim-coffee-script'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'The-NERD-Commenter'
+Bundle "pangloss/vim-javascript"
 " #################vundel config end #####################
+
+
+" enable the filetype detect
+filetype plugin indent on
+" enable syntax highlight
+syntax on
+
+
+" #################javascript config start ###############################
+autocmd FileType javascript setlocal shiftwidth=2 st=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal et
+" set the fold method is by syntax, alternate 'manual','indent','normal'
+autocmd FileType javascript set foldmethod=syntax
+" default the there is no fold in file
+autocmd FileType javascript set nofoldenable
+" enable html/css highlighting in javascript file if =1 
+let javascript_enable_domhtmlcss=1
+" enable javascript folding = 1
+let b:javascript_fold=1
+" the function is replace by f if =1
+let g:javascript_conceal=0 
+" Disable javascript comment highlighting if =1 
+let javascript_ignore_javaScriptdoc=0 
+" #################javascript config start ###############################
 
 
 " ########################### YouCompleteMe start ########################
@@ -79,11 +104,6 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " ########################### YouCompleteMe end ########################
 
 
-" enable the filetype detect
-filetype plugin indent on
-" enable syntax highlight
-syntax on
-
 "#################### coffeescript start ####################
 "# 打开 ~/.vimrc 加下面一行,可以实现保存时候自动编译成js文件
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
@@ -91,7 +111,6 @@ syntax on
 autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
 autocmd FileType coffee setlocal et sta sw=2 sts=2
 "#################### coffeescript end####################
-
 
 
 "####### NERDTree start -explore the directory tree###########
@@ -104,6 +123,7 @@ map <C-n> :NERDTreeToggle<CR>
 " close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType=="primary") | q | endif
 "####### NERDTree end -explore the directory tree###########
+
 
 "########## emmet start ---html programing #############
 ""let g:user_emmet_mode='a'
@@ -121,6 +141,7 @@ autocmd FileType json set textwidth=78 shiftwidth=2
 autocmd FileType json set softtabstop=2 tabstop=8 
 autocmd FileType json set expandtab 
 autocmd FileType json set foldmethod=syntax
+autocmd FileType json set nofoldenable
 "################## json config end ######################################
 
 
