@@ -74,19 +74,23 @@ Bundle "pangloss/vim-javascript"
 " #################vundel config end #####################
 
 
-" enable the filetype detect
-filetype plugin indent on
-" enable syntax highlight
-syntax on
+
+" #################### auto set the filetype start #####################
+au! BufRead,BufNewFile *.json set filetype=json 
+au! BufRead,BufNewFile *.js set filetype=javascript
+au! BufRead,BufNewFile *.html set filetype=html 
+au! BufRead,BufNewFile *.coffee set filetype=coffee
+" #################### auto set the filetype end #####################
 
 
 " #################javascript config start ###############################
 autocmd FileType javascript setlocal shiftwidth=2 st=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal et
 " set the fold method is by syntax, alternate 'manual','indent','normal'
-autocmd FileType javascript set foldmethod=syntax
+autocmd FileType javascript setlocal foldmethod=syntax
 " default the there is no fold in file
-autocmd FileType javascript set nofoldenable
+autocmd FileType javascript setlocal nofoldenable
+autocmd FileType javascript setlocal foldlevel=1
 " enable html/css highlighting in javascript file if =1 
 let javascript_enable_domhtmlcss=1
 " enable javascript folding = 1
@@ -108,8 +112,8 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "# 打开 ~/.vimrc 加下面一行,可以实现保存时候自动编译成js文件
 "autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
 "# 我写成这样保存时可以实时看到编译结果
-autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
-autocmd FileType coffee setlocal et sta sw=2 sts=2
+" autocmd BufWritePost *.coffee silent CoffeeCompile | CoffeeMake! -b | cwindow
+autocmd FileType coffee setlocal et sta sw=2 sts=2 st=2 
 "#################### coffeescript end####################
 
 
@@ -130,18 +134,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " set expand shortcut = ctl+e
 let g:user_emmet_expandabbr_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
+autocmd FileType html setlocal shiftwidth=2 st=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal et
 "########## emmet end ---html programing #############
 
 
 "################# json config start #######################################
-au! BufRead,BufNewFile *.json set filetype=json 
-autocmd FileType json set autoindent 
-autocmd FileType json set formatoptions=tcq2l 
-autocmd FileType json set textwidth=78 shiftwidth=2 
-autocmd FileType json set softtabstop=2 tabstop=8 
-autocmd FileType json set expandtab 
-autocmd FileType json set foldmethod=syntax
-autocmd FileType json set nofoldenable
+autocmd FileType json setlocal autoindent 
+autocmd FileType json setlocal formatoptions=tcq2l 
+autocmd FileType json setlocal textwidth=78 shiftwidth=2 
+autocmd FileType json setlocal softtabstop=2 tabstop=8 
+autocmd FileType json setlocal expandtab 
+autocmd FileType json setlocal foldmethod=syntax
+autocmd FileType json setlocal nofoldenable
 "################## json config end ######################################
 
 
@@ -152,8 +157,14 @@ nnoremap <C-W>u :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=15
+let g:ctrlp_max_height=20
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 "############ CtrlP configure end ##############################
+
+
+" enable the filetype detect
+filetype plugin indent on
+" enable syntax highlight
+syntax on
