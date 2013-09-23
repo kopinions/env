@@ -6,7 +6,7 @@ filetype off
 " enable syntax highlight
 syntax off
 " highlighted the line which cursor now in
-set cursorline
+""set cursorline
 " a smart way to ingore letter case when in search 
 set ignorecase smartcase
 " no wrap search
@@ -41,6 +41,8 @@ set cmdheight=1
 set laststatus=2
 " set the style of the status line
 set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+" set display cmd
+set showcmd
 " show the line number for each line
 set number
 " show the autoclose selection in a pretty menu
