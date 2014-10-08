@@ -49,6 +49,8 @@ set number
 set wildmenu
 " show the ruler in bottom"
 set ruler
+" set tab width to 4"
+set shiftwidth=4 st=4 tabstop=4 softtabstop=4
 "################### basic config end #######################
 
 
