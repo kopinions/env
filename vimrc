@@ -51,6 +51,10 @@ set wildmenu
 set ruler
 " set tab width to 4"
 set shiftwidth=4 st=4 tabstop=4 softtabstop=4
+" reload files when changed on disk"
+set autoread
+" yank and paste with the system clipboar"
+set clipboard=unnamed  
 "################### basic config end #######################
 
 
