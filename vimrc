@@ -165,6 +165,10 @@ autocmd FileType coffee setlocal et sta sw=2 sts=2 st=2
 "#################### coffeescript end####################
 
 
+"#################### autosave start ####################
+let g:auto_save = 1
+"#################### autosave end####################
+
 "####### NERDTree start -explore the directory tree###########
 " automatic open the NERDTree when enter vim
 " autocmd vimenter * NERDTree
