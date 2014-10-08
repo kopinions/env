@@ -83,7 +83,9 @@ Bundle "pangloss/vim-javascript"
 au! BufRead,BufNewFile *.json set filetype=json 
 au! BufRead,BufNewFile *.js set filetype=javascript
 au! BufRead,BufNewFile *.html set filetype=html 
+au! BufRead,BufNewFile *.raml set filetype=yaml
 au! BufRead,BufNewFile *.coffee set filetype=coffee
+au! BufRead,BufNewFile *.md set filetype=markdown
 " #################### auto set the filetype end #####################
 
 
