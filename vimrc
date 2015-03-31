@@ -87,6 +87,8 @@ Bundle '907th/vim-auto-save'
 "Bundle 'townk/vim-autoclose'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Chiel92/vim-autoformat'
+Bundle 'christoomey/vim-tmux-navigator'
 
 
 "Plugin 'gmarik/Vundle.vim'
