@@ -1,0 +1,25 @@
+
+# tap repositories and their packages
+
+## rcmdnk/file
+tap rcmdnk/file
+brew brew-file
+
+## caskroom/cask
+tap caskroom/cask
+brew brew-cask
+cask appcleaner
+cask google-chrome
+cask mou
+cask sequel-pro
+
+# Other Homebrew packages
+brew ansible
+
+# App Store applications
+appstore Alfred
+appstore GarageBand
+appstore iMovie
+appstore Keynote
+appstore Numbers
+appstore Pages
