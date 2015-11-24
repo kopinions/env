@@ -72,7 +72,7 @@ Bundle 'gmarik/vundle'
 Bundle 'ctrlp.vim'
 Bundle 'AutoClose'
 Bundle 'Emmet.vim'
-Bundle 'The-NERD-tree'
+"Bundle 'The-NERD-tree'
 Bundle '_jsbeautify'
 Bundle 'vim-json-bundle'
 Bundle 'vim-coffee-script'
@@ -177,9 +177,9 @@ let g:auto_save = 1
 " when no file is specfied NERDTree is opend
 "autocmd vimenter * if !argc() | NERDTree | endif
 " <C-n> is the control key of NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 " close vim if the only window left is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType=="primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType=="primary") | q | endif
 "####### NERDTree end -explore the directory tree###########
 
 
