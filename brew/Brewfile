@@ -20,4 +20,7 @@ brew 'ag'
 brew 'jq'
 brew 'git'
 brew 'vim'
-
+brew 'zsh'
+brew 'zsh-completions'
+brew 'tmux'
+brew 'homebrew/completions/tmuxinator-completion'
