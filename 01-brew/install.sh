@@ -12,4 +12,4 @@ rm -rf ~/.Brewfile || true
 # init
 brew tap Homebrew/bundle
 ln -s $BASEDIR/Brewfile ~/.Brewfile
-brew bundle
+brew bundle --global
