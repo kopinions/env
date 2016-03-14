@@ -2,8 +2,13 @@
 pushd $(dirname $0) > /dev/null
 BASEDIR=`pwd`
 popd > /dev/null
-# init the vundle
+
+# remove the default vim config
+rm -rf ~/.vimrc || true
+rm -rf ~/.vim || true
+
 pushd $BASEDIR
+# init the vundle
 git submodule init
 git submodule update
 
