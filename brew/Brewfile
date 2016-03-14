@@ -1,25 +1,23 @@
 
-# tap repositories and their packages
+# desktop applications 
+cask_args appdir: '/Applications'
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+cask 'appcleaner'
+cask 'google-chrome'
+cask 'intellij-idea'
+cask 'neteasemusic'
+cask 'alfred'
+cask 'mou'
+cask 'sequel-pro'
+cask 'iterm2'
+cask 'sublime-text3'
 
-## rcmdnk/file
-tap rcmdnk/file
-brew brew-file
 
-## caskroom/cask
-tap caskroom/cask
-brew brew-cask
-cask appcleaner
-cask google-chrome
-cask mou
-cask sequel-pro
+# terminal apps
+brew 'tig'
+brew 'ag'
+brew 'jq'
+brew 'git'
+brew 'vim'
 
-# Other Homebrew packages
-brew ansible
-
-# App Store applications
-appstore Alfred
-appstore GarageBand
-appstore iMovie
-appstore Keynote
-appstore Numbers
-appstore Pages

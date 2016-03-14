@@ -1,9 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 pushd $(dirname $0) > /dev/null
 BASEDIR=`pwd`
 popd > /dev/null
-PWD=$(pwd)
 
+# clean the bre config
+rm -rf ~/.Brewfile || true
+
+# install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-ln -s $PWD/$BASEDIR/Brewfile ~/.Brewfile
+# init
+brew tap Homebrew/bundle
+ln -s $BASEDIR/Brewfile ~/.Brewfile
+brew bundle
