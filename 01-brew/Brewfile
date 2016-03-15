@@ -14,6 +14,7 @@ cask 'sublime-text3'
 # for dev env
 cask 'vagrant'
 cask 'virtualbox'
+cask 'java'
 
 # terminal apps
 brew 'tig'
