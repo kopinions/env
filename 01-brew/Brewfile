@@ -10,6 +10,7 @@ cask 'alfred'
 cask 'mou'
 cask 'iterm2'
 cask 'sublime-text3'
+cask 'vagrant'
 
 
 # terminal apps
@@ -22,3 +23,8 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'tmux'
 brew 'homebrew/completions/tmuxinator-completion'
+brew 'cmake'
+
+# for dev ops
+brew 'ansible'
+brew 'dnsmasq'
