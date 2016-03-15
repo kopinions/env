@@ -19,4 +19,8 @@ ln -s $BASEDIR/vim ~/.vim
 # add Bundle plugins
 vim +BundleInstall +qall
 
+pushd $BASEDIR/vim/bundle/YouCompleteMe
+./install.sh --clang-completer
+popd 
+
 popd
