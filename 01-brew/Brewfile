@@ -10,8 +10,10 @@ cask 'alfred'
 cask 'mou'
 cask 'iterm2'
 cask 'sublime-text3'
-cask 'vagrant'
 
+# for dev env
+cask 'vagrant'
+cask 'virtualbox'
 
 # terminal apps
 brew 'tig'
