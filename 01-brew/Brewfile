@@ -11,6 +11,9 @@ cask 'mou'
 cask 'iterm2'
 cask 'sublime-text3'
 cask 'sogouinput'
+cask 'youdao'
+cask 'qq'
+cask 'kuaipan'
 
 # for dev env
 cask 'vagrant'
