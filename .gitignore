@@ -1,2 +1,4 @@
 03-vimrc/vim/bundle/*
 03-vimrc/vim/.netrwhist
+04-tmux/tmux/plugins/*
+04-tmux/tmux/resurrect/*
