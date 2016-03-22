@@ -68,27 +68,28 @@ map <C-l> <ESC>\cu
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'ctrlp.vim'
-Bundle 'AutoClose'
-Bundle 'Emmet.vim'
-"Bundle 'The-NERD-tree'
-Bundle '_jsbeautify'
-Bundle 'vim-json-bundle'
-Bundle 'vim-coffee-script'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'The-NERD-Commenter'
-Bundle "pangloss/vim-javascript"
-Bundle "dyng/ctrlsf.vim"
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle '907th/vim-auto-save'
-"Bundle 'townk/vim-autoclose'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Chiel92/vim-autoformat'
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'gmarik/vundle'
+Plugin 'ctrlp.vim'
+Plugin 'AutoClose'
+Plugin 'Emmet.vim'
+"Plugin 'The-NERD-tree'
+Plugin '_jsbeautify'
+Plugin 'vim-json-bundle'
+Plugin 'vim-coffee-script'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'The-NERD-Commenter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin '907th/vim-auto-save'
+"Plugin 'townk/vim-autoclose'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'airblade/vim-gitgutter'
 
 
 "Plugin 'gmarik/Vundle.vim'
@@ -217,6 +218,10 @@ let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 "############ CtrlP configure end ##############################
 
+"#################### vim-gitgutter configure start ##################
+let g:gitgutter_avoid_cmd_prompt_on_windows = 0
+set updatetime=250
+"#################### vim-gitgutter configure stop ##################
 
 " enable the filetype detect
 filetype plugin indent on
