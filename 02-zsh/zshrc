@@ -84,5 +84,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export GOPATH=/workspace/golang
 PATH=$PATH:$GOPATH/bin
-
+export PATH=$PATH
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
