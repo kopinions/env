@@ -13,7 +13,7 @@ cask 'sublime-text3'
 cask 'sogouinput'
 cask 'youdao'
 cask 'qq'
-cask 'kuaipan'
+cask 'docker'
 
 # for dev env
 cask 'vagrant'
@@ -31,9 +31,6 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'tmux'
 brew 'homebrew/completions/tmuxinator-completion'
-brew 'cmake'
 
 # for dev ops
 brew 'ansible'
-brew 'dnsmasq'
-brew 'docker'
