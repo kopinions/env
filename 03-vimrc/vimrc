@@ -66,7 +66,7 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 Plugin 'ctrlp.vim'
-Plugin 'AutoClose'
+"Plugin 'AutoClose'
 Plugin 'Emmet.vim'
 "Plugin 'The-NERD-tree'
 Plugin '_jsbeautify'
@@ -89,7 +89,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'haya14busa/incsearch-easymotion.vim'
-
+Plugin 'fatih/vim-go'
+Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 "Plugin 'gmarik/Vundle.vim'
 "Plugin 'wavded/vim-stylus'
@@ -150,6 +153,17 @@ let g:javascript_conceal=0
 " Disable javascript comment highlighting if =1 
 let javascript_ignore_javaScriptdoc=0 
 " #################javascript config start ###############################
+
+" ################# yaml config start ###############################
+autocmd FileType yaml setlocal shiftwidth=2 st=2 tabstop=2 softtabstop=2
+autocmd FileType yaml setlocal et
+" set the fold method is by syntax, alternate 'manual','indent','normal'
+autocmd FileType yaml setlocal foldmethod=syntax
+" default the there is no fold in file
+autocmd FileType yaml setlocal nofoldenable
+autocmd FileType yaml setlocal foldlevel=1
+" ################# yaml config start ###############################
+
 
 
 " ########################### YouCompleteMe start ########################
@@ -264,8 +278,19 @@ let g:EasyMotion_startofline = 0
 let g:EasyMotion_smartcase = 1
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 "#################### easymotion configure stop ##################
+"#################### vim-go configure start ##################
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+"#################### vim-go configure stop ##################
 
 " enable the filetype detect
 filetype plugin indent on
+filetype plugin on
 " enable syntax highlight
 syntax on
