@@ -242,6 +242,16 @@ let g:gitgutter_avoid_cmd_prompt_on_windows = 0
 set updatetime=250
 "#################### vim-gitgutter configure stop ##################
 
+" ################## ctrlsf config start ##########################
+let g:ctrlsf_ackpkg = 'rg'
+nnoremap <Leader>sp :CtrlSF<CR>
+nnoremap <Leader>sl <Plug>CtrlSFPwordPath<CR>
+vmap <Leader>sp <Plug>CtrlSFVwordPath<CR>
+vmap <Leader>sl <Plug>CtrlSFPwordPath<CR>
+inoremap <Leader>sp <Plug>CtrlSFCwordPath<CR>
+inoremap <Leader>sl <Plug>CtrlSFPwordPath<CR>
+" ################## ctrlsf config end ##########################
+
 "#################### easymotion configure start ##################
 " <Leader>f{char} to move to {char}
 
