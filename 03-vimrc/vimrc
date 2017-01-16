@@ -1,3 +1,5 @@
+let mapleader=";"
+
 "################### basic config start #######################
 " disable vi campatible mode
 set nocompatible
@@ -51,6 +53,10 @@ set shiftwidth=4 st=4 tabstop=4 softtabstop=4
 set autoread
 " yank and paste with the system clipboar"
 set clipboard=unnamed  
+" highlight current line
+set cursorline
+" highlight current column
+set cursorcolumn
 "################### basic config end #######################
 
 
