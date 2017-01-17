@@ -51,8 +51,6 @@ set ruler
 set shiftwidth=4 st=4 tabstop=4 softtabstop=4
 " reload files when changed on disk"
 set autoread
-vnoremap <Leader>y "+y
-noremap <Leader>p "+p
 " highlight current line
 set cursorline
 " highlight current column
@@ -85,7 +83,7 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin '907th/vim-auto-save'
+"Plugin '907th/vim-auto-save'
 "Plugin 'townk/vim-autoclose'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'easymotion/vim-easymotion'
