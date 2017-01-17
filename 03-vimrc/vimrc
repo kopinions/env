@@ -252,7 +252,7 @@ set updatetime=250
 
 " ################## ctrlsf config start ##########################
 let g:ctrlsf_ackpkg = 'rg'
-nnoremap <Leader>sp :CtrlSF<CR>
+nnoremap <Leader>sp :CtrlSF  
 nnoremap <Leader>sl <Plug>CtrlSFPwordPath<CR>
 vmap <Leader>sp <Plug>CtrlSFVwordPath<CR>
 vmap <Leader>sl <Plug>CtrlSFPwordPath<CR>
