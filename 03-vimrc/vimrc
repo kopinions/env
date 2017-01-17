@@ -55,6 +55,9 @@ set autoread
 set cursorline
 " highlight current column
 set cursorcolumn
+
+" allow the buffers to be hidden if have modified a buffer
+set hidden
 "################### basic config end #######################
 
 
