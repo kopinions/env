@@ -223,11 +223,18 @@ autocmd FileType json setlocal nofoldenable
 
 
 "############# CtrlP configure start###########################
-noremap <C-W><C-U> :CtrlPMRU<CR>
-nnoremap <C-W>u :CtrlPMRU<CR>
+noremap <Leader>p :CtrlP<CR>
+noremap <Leader>bb :CtrlPBuffer<CR>
+noremap <Leader>bm :CtrlPMixed<CR>
+noremap <Leader>bs :CtrlPMRU<CR>
 
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
-let g:ctrlp_working_path_mode=0
+nnoremap <C-W>u :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+let g:ctrlp_working_path_mode="r"
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=20
 let g:ctrlp_match_window_reversed=0
