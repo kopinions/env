@@ -68,10 +68,9 @@ map <C-l> <ESC>\cu
 
 
 " #################vundel config start #####################
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlp.vim'
 "Plugin 'AutoClose'
 Plugin 'Emmet.vim'
@@ -100,6 +99,8 @@ Plugin 'fatih/vim-go'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+call vundle#end()  
 
 "Plugin 'gmarik/Vundle.vim'
 "Plugin 'wavded/vim-stylus'
