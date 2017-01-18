@@ -1,5 +1,40 @@
 let mapleader=";"
 
+" #################vundel config start #####################
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlp.vim'
+Plugin 'Emmet.vim'
+"Plugin 'The-NERD-tree'
+Plugin '_jsbeautify'
+Plugin 'vim-json-bundle'
+Plugin 'vim-coffee-script'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'The-NERD-Commenter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'haya14busa/incsearch-easymotion.vim'
+Plugin 'fatih/vim-go'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'Raimondi/delimitMate'
+call vundle#end()  
+" #################vundel config end #####################
+
+
 "################### basic config start #######################
 " disable vi campatible mode
 set nocompatible
@@ -26,7 +61,6 @@ set matchtime=10
 "set t_Co=256
 "colorscheme distinguished
 "colorscheme twilight
-colorscheme vividchalk
 "set cursorcolumn
 set guifont=Inconsolata:h15
 " use in regular expression, you do not need to add \ when use $ . * ^ 
@@ -67,70 +101,12 @@ map <C-l> <ESC>\cu
 " ###################### add nerd commenter config end ##################
 
 
-" #################vundel config start #####################
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlp.vim'
-"Plugin 'AutoClose'
-Plugin 'Emmet.vim'
-"Plugin 'The-NERD-tree'
-Plugin '_jsbeautify'
-Plugin 'vim-json-bundle'
-Plugin 'vim-coffee-script'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'The-NERD-Commenter'
-Plugin 'pangloss/vim-javascript'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'terryma/vim-multiple-cursors'
-"Plugin '907th/vim-auto-save'
-"Plugin 'townk/vim-autoclose'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-Plugin 'haya14busa/incsearch-easymotion.vim'
-Plugin 'fatih/vim-go'
-Plugin 'mileszs/ack.vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
-call vundle#end()  
 
-"Plugin 'gmarik/Vundle.vim'
-"Plugin 'wavded/vim-stylus'
-"Plugin 'git@github.com:brettof86/vim-swigjs.git'
-"Plugin 'tpope/vim-surround'
-"Plugin 'junegunn/seoul256.vim'
-"Plugin 'flazz/vim-colorschemes' 
-"Plugin 'mattn/webapi-vim'
-"Plugin 'mattn/gist-vim'
-"Plugin 'elzr/vim-json'
-"Plugin 'jelera/vim-javascript-syntax'
-"Plugin '907th/vim-auto-save'
-"Plugin 'townk/vim-autoclose'
-"Plugin 'jlanzarotta/bufexplorer'
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'shougo/neocomplcache.vim'
-"Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'wycats/nerdtree'
-"Plugin 'tomtom/tcomment_vim'
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'bling/vim-airline'
-"Plugin 'kchmck/vim-coffee-script'
-"Plugin 'junegunn/vim-easy-align'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'tpope/Vim-fugitive'
-"Plugin 'hrsh7th/vim-hybrid'
-"Plugin 'statianzo/vim-jade'
-"Plugin 'tpope/vim-markdown'
-"Plugin 'terryma/vim-multiple-cursors'
-" #################vundel config end #####################
+" ################################ set the airline start ###################
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
+" ################################ set the airline end ###################
 
 
 
