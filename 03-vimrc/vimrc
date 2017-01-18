@@ -31,6 +31,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()  
 " #################vundel config end #####################
 
@@ -124,7 +125,7 @@ au! BufRead,BufNewFile *.md set filetype=markdown
 
 
 " #################javascript config start ###############################
-autocmd FileType javascript setlocal shiftwidth=2 st=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=4 st=4 tabstop=4 softtabstop=4
 autocmd FileType javascript setlocal et
 " set the fold method is by syntax, alternate 'manual','indent','normal'
 autocmd FileType javascript setlocal foldmethod=syntax
@@ -241,6 +242,18 @@ vmap <Leader>sl <Plug>CtrlSFPwordPath<CR>
 inoremap <Leader>sp <Plug>CtrlSFCwordPath<CR>
 inoremap <Leader>sl <Plug>CtrlSFPwordPath<CR>
 " ################## ctrlsf config end ##########################
+
+" ################## vim-syntastic/syntastic config start ###########
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" ################## vim-syntastic/syntastic config end ################	
+
 
 "#################### easymotion configure start ##################
 " <Leader>f{char} to move to {char}
