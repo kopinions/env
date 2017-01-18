@@ -216,12 +216,9 @@ autocmd FileType json setlocal nofoldenable
 
 
 "############# CtrlP configure start###########################
-noremap <Leader>p :CtrlP<CR>
 noremap <Leader>bb :CtrlPBuffer<CR>
 noremap <Leader>bm :CtrlPMixed<CR>
 noremap <Leader>bs :CtrlPMRU<CR>
-
-nnoremap <C-W>u :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|\_site)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
@@ -237,6 +234,7 @@ let g:ctrlp_follow_symlinks=1
 
 "#################### vim-gitgutter configure start ##################
 let g:gitgutter_avoid_cmd_prompt_on_windows = 0
+let g:gitgutter_map_keys = 0
 set updatetime=250
 "#################### vim-gitgutter configure stop ##################
 
@@ -264,15 +262,15 @@ let g:syntastic_check_on_wq = 0
 
 "#################### easymotion configure start ##################
 " <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+map  <Leader><Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
 " Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
+map <Leader><Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)
 
 " Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 
 function! s:incsearch_config(...) abort
 	  return incsearch#util#deepextend(deepcopy({
@@ -297,10 +295,6 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0
 let g:EasyMotion_smartcase = 1
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
