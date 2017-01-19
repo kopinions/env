@@ -61,7 +61,7 @@ set cmdheight=1
 " set status line height
 set laststatus=2
 " set the style of the status line
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+"set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
 " set display cmd
 set showcmd
 " show the line number for each line
@@ -180,6 +180,7 @@ autocmd FileType yaml setlocal foldlevel=1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " ########################### YouCompleteMe end ########################
