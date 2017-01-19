@@ -224,11 +224,10 @@ autocmd FileType html setlocal et
 "################# json config start #######################################
 autocmd FileType json setlocal autoindent 
 autocmd FileType json setlocal formatoptions=tcq2l 
-autocmd FileType json setlocal textwidth=78 shiftwidth=2 
-autocmd FileType json setlocal softtabstop=2 tabstop=8 
+autocmd FileType json setlocal textwidth=256 shiftwidth=4
+autocmd FileType json setlocal softtabstop=4 tabstop=4 
 autocmd FileType json setlocal expandtab 
 autocmd FileType json setlocal foldmethod=syntax
-autocmd FileType json setlocal nofoldenable
 "################## json config end ######################################
 
 
@@ -237,9 +236,9 @@ noremap <Leader>bb :CtrlPBuffer<CR>
 noremap <Leader>bm :CtrlPMixed<CR>
 noremap <Leader>bs :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
+			\ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|\_site)$',
+			\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+			\}
 
 let g:ctrlp_working_path_mode="r"
 let g:ctrlp_match_window_bottom=1
@@ -290,23 +289,23 @@ map  <Leader><Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 
 function! s:incsearch_config(...) abort
-	  return incsearch#util#deepextend(deepcopy({
-	    \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-	    \   'keymap': {
-	    \     "\<CR>": '<Over>(easymotion)'
-	    \   },
-	    \   'is_expr': 0
-	    \ }), get(a:, 1, {}))
+	return incsearch#util#deepextend(deepcopy({
+				\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+				\   'keymap': {
+				\     "\<CR>": '<Over>(easymotion)'
+				\   },
+				\   'is_expr': 0
+				\ }), get(a:, 1, {}))
 endfunction
 
 function! s:config_easyfuzzymotion(...) abort
-  return extend(copy({
-  \   'converters': [incsearch#config#fuzzyword#converter()],
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-  \   'is_expr': 0,
-  \   'is_stay': 1
-  \ }), get(a:, 1, {}))
+	return extend(copy({
+				\   'converters': [incsearch#config#fuzzyword#converter()],
+				\   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+				\   'keymap': {"\<CR>": '<Over>(easymotion)'},
+				\   'is_expr': 0,
+				\   'is_stay': 1
+				\ }), get(a:, 1, {}))
 endfunction
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
