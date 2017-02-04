@@ -3,22 +3,58 @@
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
-cask 'appcleaner'
-cask 'google-chrome'
-cask 'neteasemusic'
-cask 'alfred'
-cask 'mou'
-cask 'iterm2'
-cask 'sublime-text3'
-cask 'sogouinput'
-cask 'youdao'
-cask 'qq'
+
+# system
 cask 'docker'
+cask 'java'
+cask 'iterm2'
+cask 'sogouinput'
+
+# productivity 
+cask 'alfred'
+cask 'appcleaner'
+cask 'cheatsheet'
+cask 'spectacle'
+
+# editor
+cask 'sublime-text'
+cask 'atom'
+cask 'macdown'
+cask 'gitbook-editor'
+
+# storage
+cask 'baiducloud'
+cask 'evernote'
+cask 'cleanmymac'
+cask 'dropbox'
+cask 'dash'
+cask 'thunder'
+
+# broswer
+cask 'firefox'
+cask 'google-chrome'
+
+# study
+cask 'youdao'
+cask 'kindle'
+
+# entertain
+cask 'neteasemusic'
+cask 'qqmusic'
+
+# communication
+cask 'qq'
+cask 'skype'
+cask 'slack'
+
+# cooperate
+cask 'screenhero'
+cask 'teamviewer'
+cask 'tigervnc-viewer'
 
 # for dev env
 cask 'vagrant'
 cask 'virtualbox'
-cask 'java'
 
 # terminal apps
 brew 'tig'
@@ -30,7 +66,4 @@ brew 'vim'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'tmux'
-brew 'homebrew/completions/tmuxinator-completion'
-
-# for dev ops
-brew 'ansible'
+brew 'tmuxinator-completion'
