@@ -110,8 +110,6 @@ nmap <leader>bl :ls<CR>
 
 
 " ###################### add nerd commenter config start ##################
-map <C-k> <Leader>cc
-map <C-l> <Leader>cu
 " ###################### add nerd commenter config end ##################
 
 
