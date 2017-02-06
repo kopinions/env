@@ -28,6 +28,8 @@ Plugin 'Emmet.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-json-bundle'
 Plugin 'The-NERD-Commenter'
+
+Plugin 'tpope/vim-obsession'
 call vundle#end()  
 " #################vundel config end #####################
 
