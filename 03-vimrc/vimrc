@@ -28,7 +28,7 @@ Plugin 'Emmet.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-json-bundle'
 Plugin 'The-NERD-Commenter'
-
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-obsession'
 call vundle#end()  
 " #################vundel config end #####################
@@ -275,6 +275,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " ################## vim-syntastic/syntastic config end ################	
 
+"############################### tmux navigator ##################
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 1
+"############################### tmux navigator ##################
 
 "#################### easymotion configure start ##################
 " <Leader>f{char} to move to {char}
