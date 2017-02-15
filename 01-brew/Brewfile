@@ -23,9 +23,8 @@ cask 'macdown'
 cask 'gitbook-editor'
 
 # storage
-cask 'baiducloud'
+cask 'baidunetdisk'
 cask 'evernote'
-cask 'cleanmymac'
 cask 'dropbox'
 cask 'dash'
 cask 'thunder'
