@@ -4,3 +4,6 @@
 [submodule "03-vimrc/vim/bundle/Vundle.vim"]
 	path = 03-vimrc/vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "06-emacs.d"]
+	path = 06-emacs.d
+	url = https://github.com/purcell/emacs.d.git

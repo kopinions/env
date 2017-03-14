@@ -3,6 +3,7 @@
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
+tap 'd12frosted/emacs-plus'
 
 # system
 cask 'docker'
@@ -21,6 +22,7 @@ cask 'sublime-text'
 cask 'atom'
 cask 'macdown'
 cask 'gitbook-editor'
+brew 'emacs-plus'
 
 # storage
 cask 'baidunetdisk'
