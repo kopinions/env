@@ -1,0 +1,50 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+
+# alias
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+alias full move 0;0 ${ssx}+20;${ssy}+20
+alias lefthalf push left  bar-resize:screenSizeX/2
+alias righthalf push right bar-resize:screenSizeX/2
+alias tophalf push up bar-resize:screenSizeY/2
+alias bottomhalf push down bar-resize:screenSizeY/2
+
+# Resize Bindings
+bind right:alt       resize +10% +0
+bind left:alt        resize -10% +0
+bind up:alt          resize +0   -10%
+bind down:alt        resize +0   +10%
+bind right:ctrl;alt  resize -10% +0 bottom-right
+bind left:ctrl;alt   resize +10% +0 bottom-right
+bind up:ctrl;alt     resize +0   +10% bottom-right
+bind down:ctrl;alt   resize +0   -10% bottom-right
+bind m:cmd;ctrl,alt  ${full}
+bind c:cmd;ctrl,alt  sequence push top | push left | resize -50% -50% top-left
+
+# Push Bindings
+bind left:ctrl;alt;cmd    ${lefthalf}
+bind right:ctrl;alt;cmd   ${righthalf}
+bind up:ctrl;alt;cmd      ${tophalf}
+bind down:ctrl;alt;cmd    ${bottomhalf}
+
+# Throw Bindings
+bind 1:ctrl;alt         throw 0 resize
+bind 2:ctrl;alt         throw 1 resize
+bind 3:ctrl;alt         throw 2 resize
+bind right:ctrl;alt;cmd throw right resize
+bind left:ctrl;alt;cmd  throw left  resize
+bind up:ctrl;alt;cmd    throw up    resize
+bind down:ctrl;alt;cmd  throw down  resize
+
+# Focus Bindings
+
+# Window Hints
+bind esc:cmd hint

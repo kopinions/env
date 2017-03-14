@@ -15,7 +15,7 @@ cask 'sogouinput'
 cask 'alfred'
 cask 'appcleaner'
 cask 'cheatsheet'
-cask 'spectacle'
+cask 'slate'
 
 # editor
 cask 'sublime-text'
@@ -46,7 +46,6 @@ cask 'qqmusic'
 # communication
 cask 'qq'
 cask 'skype'
-cask 'slack'
 
 # cooperate
 cask 'screenhero'
