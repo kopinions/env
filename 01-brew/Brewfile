@@ -10,6 +10,10 @@ cask 'docker'
 cask 'java'
 cask 'iterm2'
 cask 'sogouinput'
+# change the mouse scroll direction
+cask 'scroll-reverser'
+# usb network sharing driver
+cask 'horndis'
 
 # productivity 
 cask 'alfred'
