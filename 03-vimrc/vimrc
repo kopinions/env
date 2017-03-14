@@ -52,7 +52,6 @@ set showmatch
 set matchtime=10
 " when use the distinguished, the terminal is required to be 256 color
 set t_Co=256
-"set cursorcolumn
 set guifont=Inconsolata:h15
 " use in regular expression, you do not need to add \ when use $ . * ^ 
 set magic
@@ -95,6 +94,8 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*~,*.swp,*.tmp,*.swo
+
+hi CursorColumn ctermfg=White ctermbg=234 cterm=none guifg=white guibg=yellow gui=bold
 
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
