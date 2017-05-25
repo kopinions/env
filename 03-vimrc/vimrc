@@ -22,7 +22,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'fatih/vim-go'
 Plugin 'skywind3000/asyncrun.vim'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Emmet.vim'
 Plugin 'mxw/vim-jsx'
@@ -257,6 +257,7 @@ set updatetime=250
 
 " ################## ctrlsf config start ##########################
 let g:ctrlsf_ackpkg = 'rg'
+let g:ctrlsf_confirm_save = 0
 nnoremap <Leader>sp :CtrlSF  
 nnoremap <Leader>sl <Plug>CtrlSFPwordPath<CR>
 vmap <Leader>sp <Plug>CtrlSFVwordPath<CR>

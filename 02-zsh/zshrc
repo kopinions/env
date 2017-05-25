@@ -160,3 +160,4 @@ PATH=$PATH:$GOPATH/bin
 PATH="/usr/local/sbin:$PATH"
 
 export PATH=$PATH
+export PATH="/usr/local/opt/gettext/bin:$PATH"

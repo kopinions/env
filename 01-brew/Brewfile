@@ -10,8 +10,6 @@ cask 'docker'
 cask 'java'
 cask 'iterm2'
 cask 'sogouinput'
-# change the mouse scroll direction
-cask 'scroll-reverser'
 # usb network sharing driver
 cask 'horndis'
 
@@ -57,8 +55,8 @@ cask 'teamviewer'
 cask 'tigervnc-viewer'
 
 # for dev env
-cask 'vagrant'
-cask 'virtualbox'
+#cask 'vagrant'
+#cask 'virtualbox'
 
 # terminal apps
 brew 'tig'
@@ -72,3 +70,8 @@ brew 'zsh-completions'
 brew 'reattach-to-user-namespace' 
 brew 'tmux'
 brew 'tmuxinator-completion'
+brew 'mycli'
+# multiple thread downloader
+brew 'axel'
+# code statictis
+brew 'cloc'
