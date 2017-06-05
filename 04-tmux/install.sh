@@ -8,5 +8,6 @@ rm -rf ~/.tmux.conf || true
 rm -rf ~/.tmux || true
 
 # init
+git submodule update --init
 ln -s $BASEDIR/tmux.conf ~/.tmux.conf
 ln -s $BASEDIR/tmux ~/.tmux
