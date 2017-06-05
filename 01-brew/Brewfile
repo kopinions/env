@@ -32,6 +32,7 @@ cask 'evernote'
 cask 'dropbox'
 cask 'dash'
 cask 'thunder'
+cask '1password'
 
 # broswer
 cask 'firefox'
@@ -51,8 +52,6 @@ cask 'skype'
 
 # cooperate
 cask 'screenhero'
-cask 'teamviewer'
-cask 'tigervnc-viewer'
 
 # for dev env
 #cask 'vagrant'
@@ -75,3 +74,6 @@ brew 'mycli'
 brew 'axel'
 # code statictis
 brew 'cloc'
+brew 'golang'
+brew 'maven'
+brew 'fzf'
