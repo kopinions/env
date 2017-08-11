@@ -18,6 +18,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Raimondi/delimitMate'
+Plugin 'myusuf3/numbers.vim'
 
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'fatih/vim-go'
@@ -30,6 +31,8 @@ Plugin 'vim-json-bundle'
 Plugin 'The-NERD-Commenter'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-obsession'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'surround.vim'
 call vundle#end()  
 " #################vundel config end #####################
 
@@ -331,6 +334,21 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 "#################### vim-go configure stop ##################
+
+"##################### tmux navigator start ################## 
+" Disable tmux navigator when zooming the Vim pane
+" let g:tmux_navigator_disable_when_zoomed = 1
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
+"##################### tmux navigator start ################## 
+
+" for mac only
+vmap <D-v> "-d"+p
+vmap <D-c> "*y
+imap <D-c> "*yy
+imap <D-v> "*P<CR>
+nmap <D-c> "*yy
+nmap <D-v> "*P
 
 " enable the filetype detect
 filetype plugin indent on
