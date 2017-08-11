@@ -3,6 +3,7 @@
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
+tap 'homebrew/versions'
 tap 'd12frosted/emacs-plus'
 
 # system
@@ -58,6 +59,8 @@ cask 'screenhero'
 #cask 'virtualbox'
 
 # terminal apps
+brew 'cmake'
+brew 'nmap'
 brew 'tig'
 brew 'ag'
 brew 'jq'
@@ -66,6 +69,7 @@ brew 'git'
 brew 'vim'
 brew 'zsh'
 brew 'zsh-completions'
+
 brew 'reattach-to-user-namespace' 
 brew 'tmux'
 brew 'tmuxinator-completion'
@@ -77,3 +81,6 @@ brew 'cloc'
 brew 'golang'
 brew 'maven'
 brew 'fzf'
+brew 'watch'
+
+brew 'zplug'
