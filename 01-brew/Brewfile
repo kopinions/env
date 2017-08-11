@@ -81,6 +81,7 @@ brew 'cloc'
 brew 'golang'
 brew 'maven'
 brew 'fzf'
+brew 'node@6'
 brew 'watch'
 
 brew 'zplug'
