@@ -138,6 +138,9 @@ augroup QuickfixStatus
         \ statusline=%t\ [%{g:asyncrun_status}]\ %{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
 augroup END
 noremap <leader>x :AsyncRun 
+augroup vimrc
+    autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
+augroup END
 " ################################ set the async run end ###################
 
 
@@ -261,6 +264,10 @@ set updatetime=250
 " ################## ctrlsf config start ##########################
 let g:ctrlsf_ackpkg = 'rg'
 let g:ctrlsf_confirm_save = 0
+" ctrlsf root is project and controll by two options, first f is search the
+" current file, and the second w is default fall back search from current
+" directory
+let g:ctrlsf_default_root = 'project+fw'
 nnoremap <Leader>sp :CtrlSF  
 nnoremap <Leader>sl <Plug>CtrlSFPwordPath<CR>
 vmap <Leader>sp <Plug>CtrlSFVwordPath<CR>
