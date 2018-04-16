@@ -3,7 +3,6 @@
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
-tap 'homebrew/versions'
 tap 'd12frosted/emacs-plus'
 
 # system
@@ -18,7 +17,6 @@ cask 'horndis'
 cask 'alfred'
 cask 'appcleaner'
 cask 'cheatsheet'
-cask 'slate'
 
 # editor
 cask 'sublime-text'
