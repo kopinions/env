@@ -7,7 +7,7 @@ popd > /dev/null
 rm -rf ~/.Brewfile || true
 
 # install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # init
 brew tap Homebrew/bundle
