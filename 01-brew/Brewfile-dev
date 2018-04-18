@@ -1,0 +1,9 @@
+# desktop applications 
+cask_args appdir: '/Applications'
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+
+cask 'intellij-idea'
+brew 'golang'
+brew 'node'
+

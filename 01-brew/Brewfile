@@ -1,20 +1,23 @@
-
 # desktop applications 
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
-tap 'd12frosted/emacs-plus'
 
 # system
 cask 'docker'
 cask 'java'
 cask 'iterm2'
 cask 'sogouinput'
+cask 'shadowsocksx-ng'
+cask 'snipaste'
 # usb network sharing driver
 cask 'horndis'
 
 # productivity 
 cask 'alfred'
+cask 'xmind'
+cask 'near-lock'
+cask 'hammerspoon'
 cask 'appcleaner'
 cask 'cheatsheet'
 
@@ -23,23 +26,24 @@ cask 'sublime-text'
 cask 'atom'
 cask 'macdown'
 cask 'gitbook-editor'
-brew 'emacs-plus'
+brew 'emacs', args: ["with-cocoa", "with-gnutls"] 
 
 # storage
 cask 'baidunetdisk'
+cask 'baiducloud'
 cask 'evernote'
-cask 'dropbox'
 cask 'dash'
 cask 'thunder'
 cask '1password'
+cask 'nutstore'
 
 # broswer
 cask 'firefox'
 cask 'google-chrome'
 
 # study
-cask 'youdao'
 cask 'kindle'
+cask 'youdaodict'
 
 # entertain
 cask 'neteasemusic'
@@ -47,18 +51,14 @@ cask 'qqmusic'
 
 # communication
 cask 'qq'
-cask 'skype'
-
-# cooperate
-cask 'screenhero'
-
-# for dev env
-#cask 'vagrant'
-#cask 'virtualbox'
 
 # terminal apps
-brew 'cmake'
+## network
+brew 'telnet'
 brew 'nmap'
+brew 'axel' # multiple thread downloader
+
+brew 'cmake'
 brew 'tig'
 brew 'ag'
 brew 'jq'
@@ -66,14 +66,13 @@ brew 'autojump'
 brew 'git'
 brew 'vim'
 brew 'zsh'
+brew 'tldr'
 brew 'zsh-completions'
 
 brew 'reattach-to-user-namespace' 
 brew 'tmux'
 brew 'tmuxinator-completion'
 brew 'mycli'
-# multiple thread downloader
-brew 'axel'
 # code statictis
 brew 'cloc'
 brew 'golang'
@@ -83,3 +82,6 @@ brew 'node@6'
 brew 'watch'
 
 brew 'zplug'
+
+# other
+cask 'logitech-options'
