@@ -13,7 +13,7 @@ cask 'snipaste'
 # usb network sharing driver
 cask 'horndis'
 
-# productivity 
+# productivity
 cask 'alfred'
 cask 'xmind'
 cask 'near-lock'
@@ -26,7 +26,7 @@ cask 'sublime-text'
 cask 'atom'
 cask 'macdown'
 cask 'gitbook-editor'
-brew 'emacs', args: ["with-cocoa", "with-gnutls"] 
+brew 'emacs', args: ["with-cocoa", "with-gnutls"]
 
 # storage
 cask 'baidunetdisk'
@@ -69,7 +69,7 @@ brew 'zsh'
 brew 'tldr'
 brew 'zsh-completions'
 
-brew 'reattach-to-user-namespace' 
+brew 'reattach-to-user-namespace'
 brew 'tmux'
 brew 'tmuxinator-completion'
 brew 'mycli'
