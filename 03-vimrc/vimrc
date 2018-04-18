@@ -120,14 +120,14 @@ nmap <leader>bl :ls<CR>
 
 
 " ################################ set the airline start ###################
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:bufferline_echo = 0
-let g:airline_theme='bubblegum'
-let g:airline_section_error = airline#section#create_left(['%{g:asyncrun_status}'])
-let g:airline#extensions#ctrlp#color_template = 'normal'
-let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file' ]
-let g:airline#extensions#syntastic#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:bufferline_echo = 0
+"let g:airline_theme='bubblegum'
+"let g:airline_section_error = airline#section#create_left(['%{g:asyncrun_status}'])
+"let g:airline#extensions#ctrlp#color_template = 'normal'
+"let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long', 'mixed-indent-file' ]
+"let g:airline#extensions#syntastic#enabled = 1
 " ################################ set the airline end ###################
 
 
@@ -277,9 +277,9 @@ inoremap <Leader>sl <Plug>CtrlSFPwordPath<CR>
 " ################## ctrlsf config end ##########################
 
 " ################## vim-syntastic/syntastic config start ###########
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
