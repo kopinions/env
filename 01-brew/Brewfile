@@ -20,6 +20,7 @@ cask 'near-lock'
 cask 'hammerspoon'
 cask 'appcleaner'
 cask 'cheatsheet'
+cask 'cleanmymac'
 
 # editor
 cask 'sublime-text'
