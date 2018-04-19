@@ -6,4 +6,4 @@
 	url = https://github.com/tmux-plugins/tpm
 [submodule "06-emacs.d/emacs.d"]
 	path = 06-emacs.d/emacs.d
-	url = https://github.com/purcell/emacs.d.git
+	url = https://github.com/sjkyspa/emacs.d.git
