@@ -69,6 +69,7 @@ brew 'vim'
 brew 'zsh'
 brew 'tldr'
 brew 'zsh-completions'
+brew 'graphviz'
 
 brew 'reattach-to-user-namespace'
 brew 'tmux'
