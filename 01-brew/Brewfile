@@ -49,6 +49,7 @@ cask 'youdaodict'
 # entertain
 cask 'neteasemusic'
 cask 'qqmusic'
+cask 'vlc'
 
 # communication
 cask 'qq'
