@@ -5,7 +5,7 @@ tap 'caskroom/versions'
 
 # system
 cask 'docker'
-cask 'java'
+cask 'java8'
 cask 'iterm2'
 cask 'sogouinput'
 cask 'shadowsocksx-ng'
