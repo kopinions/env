@@ -37,6 +37,7 @@ cask 'dash'
 cask 'thunder'
 cask '1password'
 cask 'nutstore'
+cask 'dropbox'
 
 # broswer
 cask 'firefox'
