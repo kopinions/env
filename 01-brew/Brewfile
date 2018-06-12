@@ -24,9 +24,7 @@ cask 'cleanmymac'
 
 # editor
 cask 'sublime-text'
-cask 'atom'
 cask 'macdown'
-cask 'gitbook-editor'
 brew 'emacs', args: ["with-cocoa", "with-gnutls"]
 
 # storage
@@ -36,8 +34,6 @@ cask 'evernote'
 cask 'dash'
 cask 'thunder'
 cask '1password'
-cask 'nutstore'
-cask 'dropbox'
 
 # broswer
 cask 'firefox'
