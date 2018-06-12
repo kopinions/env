@@ -1,9 +1,9 @@
-[submodule "03-vimrc/vim/bundle/Vundle.vim"]
-	path = 03-vimrc/vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "04-tmux/tmux/plugins/tpm"]
 	path = 04-tmux/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "06-emacs.d/emacs.d"]
 	path = 06-emacs.d/emacs.d
 	url = https://github.com/sjkyspa/emacs.d.git
+[submodule "08-vimrc/vim/bundle/Vundle.vim"]
+	path = 08-vimrc/vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
