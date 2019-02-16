@@ -9,6 +9,7 @@ local log = hs.logger.new('init.lua', 'debug')
 function hks(name, etype, app)
    local windows = require("windows")
    windows:init()
+   windows.use_frame_correctness = true
    local hotkeys = {
       {
          mods = {'cmd'},
