@@ -57,9 +57,10 @@ brew 'telnet'
 brew 'nmap'
 brew 'axel' # multiple thread downloader
 
+brew 'gradle'
 brew 'cmake'
 brew 'tig'
-brew 'ag'
+brew 'rg'
 brew 'jq'
 brew 'autojump'
 brew 'git'
