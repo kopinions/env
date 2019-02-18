@@ -186,6 +186,10 @@ local hotkeys = {
 
 function hks(name, etype, app)
    if (etype == hs.application.watcher.activated) then
+      for k, v in pairs(hotkeys) do
+         hs.hotkey.deleteAll(v.mods, v.key)
+      end
+
       for k, v in pairs (hotkeys) do
          local hk = filter(
             function(item)
@@ -199,10 +203,6 @@ function hks(name, etype, app)
          else
             hs.hotkey.new(v.mods, v.key, nil,  hk[1].fn):enable()
          end
-      end
-   elseif (etype == hs.application.watcher.deactivated) then
-      for k, v in pairs (hotkeys) do
-         --         hs.hotkey.disableAll(v.mods, v.key)
       end
    end
 end
