@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gradle brew docker tmux tmuxinator)
+plugins=(git gradle brew docker tmux tmuxinator kubectl)
 
 # User configuration
 
@@ -170,3 +170,14 @@ export PATH=$PATH
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/usr/local/opt/node@6/bin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/morpheus/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/morpheus/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/morpheus/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/morpheus/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/xtensa-esp32-elf/bin:/usr/local/opt/mysql-client/bin:$PATH"
+export IDF_PATH="/workspace/6c/iot/esp-idf"

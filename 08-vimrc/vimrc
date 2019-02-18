@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'junegunn/vim-easy-align'
@@ -323,13 +323,13 @@ function! s:config_easyfuzzymotion(...) abort
 				\   'is_stay': 1
 				\ }), get(a:, 1, {}))
 endfunction
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-let g:EasyMotion_startofline = 0
-let g:EasyMotion_smartcase = 1
-noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+"map  / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+"map  n <Plug>(easymotion-next)
+"map  N <Plug>(easymotion-prev)
+"let g:EasyMotion_startofline = 0
+"let g:EasyMotion_smartcase = 1
+"noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 "#################### easymotion configure stop ##################
 "#################### vim-go configure start ##################
 let g:go_highlight_functions = 1
