@@ -20,10 +20,12 @@ local hotkeys = {
             fn = function()
                hs.keycodes.currentSourceID("com.apple.keylayout.US")
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd"}, "space", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd"}, "space", false):post(app)
-            end
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent("space", true):post(app)
+               hs.eventtap.event.newKeyEvent("space", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+
+               end
          },
       },
       default = function()
@@ -38,15 +40,61 @@ local hotkeys = {
    },
    {
       mods = {"cmd", "ctrl"},
+      key = "a",
+      specs = {
+         {
+            name = "Emacs",
+            fn = function()
+               local app = hs.window.focusedWindow():application()
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent("a", true):post(app)
+               hs.eventtap.event.newKeyEvent("a", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+            end
+         }
+      },
+      default = function()
+         windows.leftHalf()
+      end
+   },
+   {
+      mods = {"cmd", "ctrl"},
+      key = "d",
+      specs = {
+         {
+            name = "Emacs",
+            fn = function()
+               local app = hs.window.focusedWindow():application()
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent("d", true):post(app)
+               hs.eventtap.event.newKeyEvent("d", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+            end
+         }
+      },
+      default = function()
+         windows.leftHalf()
+      end
+   },
+   {
+      mods = {"cmd", "ctrl"},
       key = "Left",
       specs = {
          {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Left", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Left", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent("Left", true):post(app)
+               hs.eventtap.event.newKeyEvent("Left", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+
             end
          }
       },
@@ -62,9 +110,13 @@ local hotkeys = {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Right", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Right", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent("Right", true):post(app)
+               hs.eventtap.event.newKeyEvent("Right", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+
             end
          }
       },
@@ -80,9 +132,12 @@ local hotkeys = {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Up", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Up", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent("Up", true):post(app)
+               hs.eventtap.event.newKeyEvent("Up", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
             end
          }
       },
@@ -98,9 +153,12 @@ local hotkeys = {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Down", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl"}, "Down", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent("Down", true):post(app)
+               hs.eventtap.event.newKeyEvent("Down", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
             end
          }
       },
@@ -116,9 +174,15 @@ local hotkeys = {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl", "alt"}, "Up", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl", "alt"}, "Up", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post(app)
+               hs.eventtap.event.newKeyEvent("Up", true):post(app)
+               hs.eventtap.event.newKeyEvent("Up", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+
             end
          }
       },
@@ -134,9 +198,14 @@ local hotkeys = {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl", "alt"}, "f", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd", "ctrl", "alt"}, "f", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post(app)
+               hs.eventtap.event.newKeyEvent("f", true):post(app)
+               hs.eventtap.event.newKeyEvent("f", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
             end
          }
       },
@@ -152,10 +221,13 @@ local hotkeys = {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd", "alt"}, "c", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd", "alt"}, "c", false):post(app)
-            end
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post(app)
+               hs.eventtap.event.newKeyEvent("c", true):post(app)
+               hs.eventtap.event.newKeyEvent("c", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+               end
          }
       },
       default = function()
@@ -170,16 +242,22 @@ local hotkeys = {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
-               hs.eventtap.event.newKeyEvent({"cmd"}, "\\", true):post(app)
-               hs.timer.usleep(1000)
-               hs.eventtap.event.newKeyEvent({"cmd"}, "\\", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent("\\", true):post(app)
+               hs.eventtap.event.newKeyEvent("\\", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
             end
          },
       },
       default = function()
-         hs.eventtap.event.newKeyEvent({"cmd", "ctrl", "alt"}, "\\", true):post()
-         hs.timer.usleep(1000)
-         hs.eventtap.event.newKeyEvent({"cmd", "ctrl", "alt"}, "\\", false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
+         hs.eventtap.event.newKeyEvent("\\", true):post()
+         hs.eventtap.event.newKeyEvent("\\", false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
       end
    }
 }
