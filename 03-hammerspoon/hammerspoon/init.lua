@@ -24,8 +24,7 @@ hotkeys = {
                hs.eventtap.event.newKeyEvent("space", true):post(app)
                hs.eventtap.event.newKeyEvent("space", false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-
-               end
+            end
          },
       },
       default = function()
@@ -52,8 +51,7 @@ hotkeys = {
                hs.eventtap.event.newKeyEvent("space", false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-
-               end
+            end
          },
       },
       default = function()
@@ -69,24 +67,24 @@ hotkeys = {
       end
    },
    {
-    mods = {"cmd", "ctrl"},
-    key = "a",
-    specs = {
-       {
-          name = "Emacs",
-          fn = function()
-             local app = hs.window.focusedWindow():application()
-             hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
-             hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
-             hs.eventtap.event.newKeyEvent("a", true):post(app)
-             hs.eventtap.event.newKeyEvent("a", false):post(app)
-             hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
-             hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-          end
-       }
-    },
-    default = function()
-    end
+      mods = {"cmd", "ctrl"},
+      key = "a",
+      specs = {
+         {
+            name = "Emacs",
+            fn = function()
+               local app = hs.window.focusedWindow():application()
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+               hs.eventtap.event.newKeyEvent("a", true):post(app)
+               hs.eventtap.event.newKeyEvent("a", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+            end
+         }
+      },
+      default = function()
+      end
    },
    {
       mods = {"cmd", "ctrl"},
@@ -122,7 +120,6 @@ hotkeys = {
                hs.eventtap.event.newKeyEvent("Left", false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-
             end
          }
       },
@@ -144,7 +141,6 @@ hotkeys = {
                hs.eventtap.event.newKeyEvent("Right", false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-
             end
          }
       },
@@ -210,7 +206,6 @@ hotkeys = {
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-
             end
          }
       },
@@ -302,7 +297,6 @@ function hks(name, etype, app)
                return string.match(name:lower(), item.name:lower())
             end,
             v.specs)
-         log.i('hk', hk, v.key, v.mods)
 
          if next(hk) == nil then
             hs.hotkey.new(v.mods, v.key, nil,  v.default):enable()
@@ -313,7 +307,8 @@ function hks(name, etype, app)
    end
 end
 
-hs.application.watcher.new(hks):start()
+hkWatcher = hs.application.watcher.new(hks)
+hkWatcher:start()
 
 -- auto change the im for the application callback
 apps = {
@@ -354,14 +349,6 @@ function ims(name, etype, app)
 end
 
 -- auto change the im for the application
-hs.application.watcher.new(ims):start()
-
-hs.application.watcher.new(
-   function ()
-      if (etype == hs.application.watcher.activated) then
-      elseif (etype == hs.application.watcher.deactivated) then
-      end
-   end
-):start()
-
+imWatcher = hs.application.watcher.new(ims)
+imWatcher:start()
 hs.notify.new({title='Hammerspoon', informativeText='Ready to rock 🤘'}):send()
