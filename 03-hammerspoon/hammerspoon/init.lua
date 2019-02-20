@@ -4,13 +4,13 @@ require('functions')
 
 Install=spoon.SpoonInstall
 
-local log = hs.logger.new('init.lua', 'debug')
-local windows = require("windows")
+log = hs.logger.new('init.lua', 'debug')
+windows = require("windows")
 windows:init()
 windows.use_frame_correctness = true
 
 
-local hotkeys = {
+hotkeys = {
    {
       mods = {'cmd'},
       key = 'space',
@@ -288,7 +288,7 @@ end
 hs.application.watcher.new(hks):start()
 
 -- auto change the im for the application callback
-local apps = {
+apps = {
    {
       name = 'Emacs',
       im = 'EN'
