@@ -39,25 +39,54 @@ hotkeys = {
       end
    },
    {
-      mods = {"cmd", "ctrl"},
-      key = "a",
+      mods = {'cmd', 'shift'},
+      key = 'space',
       specs = {
          {
             name = "Emacs",
             fn = function()
                local app = hs.window.focusedWindow():application()
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
-               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
-               hs.eventtap.event.newKeyEvent("a", true):post(app)
-               hs.eventtap.event.newKeyEvent("a", false):post(app)
-               hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, true):post(app)
+               hs.eventtap.event.newKeyEvent("space", true):post(app)
+               hs.eventtap.event.newKeyEvent("space", false):post(app)
+               hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-            end
-         }
+
+               end
+         },
       },
       default = function()
-         windows.leftHalf()
+         local omnifocus = hs.appfinder.appFromName("OmniFocus")
+         if (omnifocus == nil) then
+            omnifocus = hs.application.open("OmniFocus")
+            omnifocus:hide ()
+            omnifocus:selectMenuItem({"Window", "Show Quick Entry"});
+         else
+            omnifocus:hide ()
+            omnifocus:selectMenuItem({"Window", "Show Quick Entry"});
+         end
       end
+   },
+   {
+    mods = {"cmd", "ctrl"},
+    key = "a",
+    specs = {
+       {
+          name = "Emacs",
+          fn = function()
+             local app = hs.window.focusedWindow():application()
+             hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
+             hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+             hs.eventtap.event.newKeyEvent("a", true):post(app)
+             hs.eventtap.event.newKeyEvent("a", false):post(app)
+             hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+             hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
+          end
+       }
+    },
+    default = function()
+    end
    },
    {
       mods = {"cmd", "ctrl"},
@@ -77,7 +106,6 @@ hotkeys = {
          }
       },
       default = function()
-         windows.leftHalf()
       end
    },
    {
@@ -227,7 +255,7 @@ hotkeys = {
                hs.eventtap.event.newKeyEvent("c", false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post(app)
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post(app)
-               end
+            end
          }
       },
       default = function()
@@ -318,8 +346,6 @@ function ims(name, etype, app)
       if next(config) == nil then
          hs.keycodes.currentSourceID("com.apple.keylayout.US")
       else
-         log.i('im', config[1].im)
-         log.i('kc', (string.match(config[1].im, "EN") and {"com.apple.keylayout.US"} or {"com.sogou.inputmethod.sogou.pinyin"})[1])
          hs.keycodes.currentSourceID((
                string.match(config[1].im, "EN") and {"com.apple.keylayout.US"} or {"com.sogou.inputmethod.sogou.pinyin"})[1]
          )
