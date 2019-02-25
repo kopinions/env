@@ -61,7 +61,6 @@ hotkeys = {
             omnifocus:hide ()
             omnifocus:selectMenuItem({"Window", "Show Quick Entry"});
          else
-            omnifocus:hide ()
             omnifocus:selectMenuItem({"Window", "Show Quick Entry"});
          end
       end
@@ -84,6 +83,17 @@ hotkeys = {
          }
       },
       default = function()
+         local snipaste = hs.appfinder.appFromName("Snipaste")
+         if (snipaste == nil) then
+            snipaste = hs.application.open("Snipaste")
+
+         end
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
+         hs.eventtap.event.newKeyEvent("6", true):post()
+         hs.eventtap.event.newKeyEvent("6", false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
       end
    },
    {
