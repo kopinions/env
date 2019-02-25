@@ -51,6 +51,8 @@ cask 'vlc'
 # communication
 cask 'qq'
 
+# emacs
+cask "mactex-no-gui"
 # terminal apps
 ## network
 brew 'telnet'
