@@ -361,4 +361,34 @@ end
 -- auto change the im for the application
 imWatcher = hs.application.watcher.new(ims)
 imWatcher:start()
+
+pomodoro = require("pomodoro").new()
+
+svr =
+   (
+      function ()
+         local svr = hs.httpserver.new(false, false);
+         svr:setInterface("127.0.0.1")
+         svr:setPort(13140)
+         svr:setCallback(
+            function (method, url, headers, body)
+               local payload = hs.json.decode(body)
+               log.i (payload.type, payload.title)
+               if (payload.type == "FOCUSED") then
+                  pomodoro:focused(payload)
+               elseif (payload.type == "UNFOCUSED") then
+                  payload.title = "休息" .. payload.duration .. "分钟吧"
+                  pomodoro:unfocused(payload)
+               else
+                  pomodoro:focus()
+               end
+
+               return "", 200, {}
+            end
+         )
+         svr:start()
+         return svr
+      end
+   )()
+
 hs.notify.new({title='Hammerspoon', informativeText='Ready to rock 🤘'}):send()
