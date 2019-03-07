@@ -9,6 +9,7 @@ function pomodoro.new()
       unfocused = pomodoro.unfocused,
       focus = pomodoro.focus,
       unfocus = pomodoro.unfocus,
+      timer = nil,
       canvas =
          (
             function ()
@@ -51,8 +52,21 @@ function pomodoro:show(text)
    self.canvas:setStyledText(content)
 end
 
+function dnd()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, true):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.space, true):post()
+
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.space, false):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, false):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
+end
+
 function pomodoro:focused(config)
-   pomodoro.show(self, config.title)
    hs.notify.new(
       function()
       end,
@@ -64,6 +78,23 @@ function pomodoro:focused(config)
          withdrawAfter = 15,
       }
    ):send()
+
+   dnd()
+
+   if(self.timer ~= nil) then
+      self.timer:stop()
+   end
+   local tick = tonumber(config.duration) * 60
+   self.timer = hs.timer.doUntil(
+      function()
+         return tick <= 0
+      end,
+      function()
+         tick = tick - 1
+         pomodoro.show(self, config.title .. "[" .. math.floor(tick/60) .. ":" .. tick % 60 .. "]")
+      end,
+      1
+   ):fire():start()
 end
 
 function pomodoro:focus()
@@ -71,7 +102,7 @@ function pomodoro:focus()
       function()
          local emacs = hs.appfinder.appFromName("Emacs")
          local agenda = function(app)
-                hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
             hs.eventtap.event.newKeyEvent("c", true):post(app)
             hs.eventtap.event.newKeyEvent("c", false):post(app)
             hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
@@ -88,12 +119,16 @@ function pomodoro:focus()
 
          if (emacs == nil) then
             emacs = hs.application.open("Emacs")
-            emacs:activate()
-                agenda(emacs)
-         else
-                emacs:activate()
-            agenda(emacs)
          end
+
+         emacs:activate()
+         hs.timer.doAfter(
+            1,
+            function()
+               agenda(emacs)
+            end
+         )
+
       end,
       {
          title = "Pomodoro",
@@ -110,7 +145,21 @@ function pomodoro:unfocus()
 end
 
 function pomodoro:unfocused(config)
-   pomodoro.show(self, config.title)
+   if(self.timer ~= nil) then
+      self.timer:stop()
+   end
+   local tick = tonumber(config.duration) * 60
+   self.timer = hs.timer.doUntil(
+      function()
+         return tick <= 0
+      end,
+      function()
+         tick = tick - 1
+         pomodoro.show(self, config.title .. "[" .. math.floor(tick/60) .. ":" .. tick % 60 .. "]")
+      end,
+      1
+   ):fire():start()
+
    hs.notify.new(
       function()
       end,
@@ -122,6 +171,7 @@ function pomodoro:unfocused(config)
          withdrawAfter = 15,
       }
    ):send()
+   dnd()
 end
 
 return pomodoro

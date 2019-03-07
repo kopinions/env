@@ -377,7 +377,7 @@ svr =
                if (payload.type == "FOCUSED") then
                   pomodoro:focused(payload)
                elseif (payload.type == "UNFOCUSED") then
-                  payload.title = "休息" .. payload.duration .. "分钟吧"
+                  payload.title = "休息"
                   pomodoro:unfocused(payload)
                else
                   pomodoro:focus()
