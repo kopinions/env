@@ -18,3 +18,4 @@ export PATH="/opt/xtensa-esp32-elf/bin:/usr/local/opt/mysql-client/bin:$PATH"
 if [ -f '/Users/morpheus/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/morpheus/google-cloud-sdk/path.zsh.inc'; fi
 export IDF_PATH="/workspace/6c/iot/esp-idf"
 export PATH="/Library/TeX/texbin:$PATH"
+export RIME_PATH="~/.oh-my-env/06-emacs.d/librime"

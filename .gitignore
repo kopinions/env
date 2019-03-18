@@ -2,3 +2,5 @@
 08-vimrc/vim/.netrwhist
 04-tmux/tmux/plugins/*
 04-tmux/tmux/resurrect/*
+06-emacs.d/librime/*
+06-emacs.d/liberime/*

@@ -7,3 +7,9 @@
 [submodule "08-vimrc/vim/bundle/Vundle.vim"]
 	path = 08-vimrc/vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "06-emacs.d/librime"]
+	path = 06-emacs.d/librime
+	url = https://github.com/rime/librime.git
+[submodule "06-emacs.d/liberime"]
+	path = 06-emacs.d/liberime
+	url = https://gitlab.com/liberime/liberime.git
