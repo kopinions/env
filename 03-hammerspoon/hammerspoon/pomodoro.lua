@@ -91,7 +91,7 @@ function pomodoro:focused(config)
       end,
       function()
          tick = tick - 1
-         pomodoro.show(self, config.title .. "[" .. math.floor(tick/60) .. ":" .. tick % 60 .. "]")
+         pomodoro.show(self, config.title .. "[" .. math.floor(tick/60) .. ":" .. string.format("%02d", tick % 60) .. "]")
       end,
       1
    ):fire():start()
@@ -155,7 +155,7 @@ function pomodoro:unfocused(config)
       end,
       function()
          tick = tick - 1
-         pomodoro.show(self, config.title .. "[" .. math.floor(tick/60) .. ":" .. tick % 60 .. "]")
+         pomodoro.show(self, config.title .. "[" .. math.floor(tick/60) .. ":" .. string.format("%02d", tick % 60) .. "]")
       end,
       1
    ):fire():start()
