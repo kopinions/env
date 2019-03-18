@@ -8,7 +8,8 @@ log = hs.logger.new('init.lua', 'debug')
 windows = require("windows")
 windows:init()
 windows.use_frame_correctness = true
-
+chinese="im.rime.inputmethod.Squirrel.Rime"
+english="com.apple.keylayout.US"
 
 hotkeys = {
    {
@@ -18,7 +19,6 @@ hotkeys = {
          {
             name = "Emacs",
             fn = function()
-               hs.keycodes.currentSourceID("com.apple.keylayout.US")
                local app = hs.window.focusedWindow():application()
                hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post(app)
                hs.eventtap.event.newKeyEvent("space", true):post(app)
@@ -29,11 +29,10 @@ hotkeys = {
       },
       default = function()
          local sid = hs.keycodes.currentSourceID()
-         log.i('sid', sid)
-         if (sid == "com.sogou.inputmethod.sogou.pinyin") then
-            hs.keycodes.currentSourceID("com.apple.keylayout.US")
+         if (sid == chinese) then
+            hs.keycodes.currentSourceID(english)
          else
-            hs.keycodes.currentSourceID("com.sogou.inputmethod.sogou.pinyin")
+            hs.keycodes.currentSourceID(chinese)
          end
       end
    },
@@ -349,11 +348,12 @@ function ims(name, etype, app)
          apps)
 
       if next(config) == nil then
-         hs.keycodes.currentSourceID("com.apple.keylayout.US")
       else
-         hs.keycodes.currentSourceID((
-               string.match(config[1].im, "EN") and {"com.apple.keylayout.US"} or {"com.sogou.inputmethod.sogou.pinyin"})[1]
-         )
+         local current = hs.keycodes.currentSourceID()
+         local target = (string.match(config[1].im, "EN") and {english} or {chinese})[1]
+         if (current ~= target) then
+            hs.keycodes.currentSourceID(target)
+         end
       end
    end
 end
