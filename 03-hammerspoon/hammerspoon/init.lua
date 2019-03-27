@@ -8,8 +8,6 @@ log = hs.logger.new('init.lua', 'debug')
 windows = require("windows")
 windows:init()
 windows.use_frame_correctness = true
-chinese="im.rime.inputmethod.Squirrel.Rime"
-english="com.apple.keylayout.US"
 
 hotkeys = {
    {
@@ -28,12 +26,16 @@ hotkeys = {
          },
       },
       default = function()
-         local sid = hs.keycodes.currentSourceID()
-         if (sid == chinese) then
-            hs.keycodes.currentSourceID(english)
-         else
-            hs.keycodes.currentSourceID(chinese)
-         end
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
       end
    },
    {
@@ -349,10 +351,11 @@ function ims(name, etype, app)
 
       if next(config) == nil then
       else
-         local current = hs.keycodes.currentSourceID()
-         local target = (string.match(config[1].im, "EN") and {english} or {chinese})[1]
-         if (current ~= target) then
-            hs.keycodes.currentSourceID(target)
+         local current = hs.keycodes.currentMethod()
+         if (current == nil and string.match (config [1].im, "CN")) then
+            hs.keycodes.setMethod("Squirrel")
+         elseif (current ~= nil and string.match (config [1].im, "EN")) then
+            hs.keycodes.setLayout ("U.S.")
          end
       end
    end
