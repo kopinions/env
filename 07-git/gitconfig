@@ -8,3 +8,6 @@
 	quotepath = false
 	pager = less -F -X
 	excludesfile = ~/.gitignore
+[github]
+	user = sjkyspa
+	oauth-token = token
