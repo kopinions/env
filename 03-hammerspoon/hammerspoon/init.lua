@@ -56,14 +56,28 @@ hotkeys = {
          },
       },
       default = function()
-         local omnifocus = hs.appfinder.appFromName("OmniFocus")
-         if (omnifocus == nil) then
-            omnifocus = hs.application.open("OmniFocus")
-            omnifocus:hide ()
-            omnifocus:selectMenuItem({"Window", "Show Quick Entry"});
-         else
-            omnifocus:selectMenuItem({"Window", "Show Quick Entry"});
+         local emacs = hs.appfinder.appFromName("Emacs")
+         if (emacs == nil) then
+            emacs = hs.application.open("Emacs")
+            emacs:hide ()
          end
+
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(emacs)
+         hs.eventtap.event.newKeyEvent('g', true):post(emacs)
+         hs.eventtap.event.newKeyEvent('g', false):post(emacs)
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(emacs)
+
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(emacs)
+         hs.eventtap.event.newKeyEvent('c', true):post(emacs)
+         hs.eventtap.event.newKeyEvent('c', false):post(emacs)
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(emacs)
+
+         hs.eventtap.event.newKeyEvent('c', true):post(emacs)
+         hs.eventtap.event.newKeyEvent('c', false):post(emacs)
+
+         hs.eventtap.event.newKeyEvent("t", true):post(emacs)
+         hs.eventtap.event.newKeyEvent("t", false):post(emacs)
+         emacs:activate()
       end
    },
    {
@@ -87,12 +101,11 @@ hotkeys = {
          local snipaste = hs.appfinder.appFromName("Snipaste")
          if (snipaste == nil) then
             snipaste = hs.application.open("Snipaste")
-
          end
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
-         hs.eventtap.event.newKeyEvent("6", true):post()
-         hs.eventtap.event.newKeyEvent("6", false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f13, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f13, false):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
       end
