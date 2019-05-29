@@ -352,6 +352,18 @@ apps = {
       name = 'OmniFocus',
       im = 'CN'
    },
+   {
+      name = 'Numbers',
+      im = 'CN'
+   },
+   {
+      name = 'Pages',
+      im = 'CN'
+   },
+   {
+      name = 'Keynote',
+      im = 'CN'
+   }
 }
 
 function ims(name, etype, app)
@@ -363,6 +375,10 @@ function ims(name, etype, app)
          apps)
 
       if next(config) == nil then
+         local current = hs.keycodes.currentMethod()
+         if (current ~= nil) then
+            hs.keycodes.setLayout ("U.S.")
+         end
       else
          local current = hs.keycodes.currentMethod()
          if (current == nil and string.match (config [1].im, "CN")) then
