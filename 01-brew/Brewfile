@@ -12,6 +12,7 @@ cask 'shadowsocksx-ng'
 cask 'snipaste'
 # usb network sharing driver
 cask 'horndis'
+brew 'ruby'
 
 # productivity
 cask 'alfred'
@@ -21,11 +22,14 @@ cask 'hammerspoon'
 cask 'appcleaner'
 cask 'cheatsheet'
 cask 'cleanmymac'
+brew 'mu'
+brew 'offlineimap', restart_service: :changde
 
 # editor
 cask 'sublime-text'
 cask 'macdown'
-brew 'emacs', args: ["with-cocoa", "with-gnutls"]
+brew 'emacs'
+cask 'arduino'
 
 # storage
 cask 'baidunetdisk'
@@ -58,7 +62,7 @@ cask "mactex-no-gui"
 brew 'telnet'
 brew 'nmap'
 brew 'axel' # multiple thread downloader
-
+brew 'iperf'
 brew 'gradle'
 brew 'cmake'
 brew 'tig'
@@ -71,6 +75,7 @@ brew 'zsh'
 brew 'tldr'
 brew 'zsh-completions'
 brew 'graphviz'
+brew 'tree'
 
 brew 'reattach-to-user-namespace'
 brew 'tmux'
@@ -81,7 +86,6 @@ brew 'cloc'
 brew 'golang'
 brew 'maven'
 brew 'fzf'
-brew 'node@6'
 brew 'watch'
 
 brew 'zplug'
