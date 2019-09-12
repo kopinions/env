@@ -53,6 +53,7 @@ function pomodoro:show(text)
 end
 
 function dnd()
+
    hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
    hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
    hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, true):post()
@@ -75,7 +76,7 @@ function pomodoro:focused(config)
          informativeText = "任务已经开始，加油吧！！！",
          subTitle = "",
          autoWithdraw = true,
-         withdrawAfter = 15,
+         withdrawAfter = 3,
       }
    ):send()
 
@@ -168,7 +169,7 @@ function pomodoro:unfocused(config)
          informativeText = "任务已经结束，休息一会吧。",
          subTitle = "",
          autoWithdraw = true,
-         withdrawAfter = 15,
+         withdrawAfter = 3,
       }
    ):send()
    dnd()

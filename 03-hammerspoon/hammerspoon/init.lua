@@ -26,16 +26,10 @@ hotkeys = {
          },
       },
       default = function()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, true):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, true):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, false):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, false):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
       end
    },
    {
@@ -298,12 +292,8 @@ hotkeys = {
       },
       default = function()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
-         hs.eventtap.event.newKeyEvent("\\", true):post()
-         hs.eventtap.event.newKeyEvent("\\", false):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, false):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
       end
    }
@@ -362,6 +352,14 @@ apps = {
    },
    {
       name = 'Keynote',
+      im = 'CN'
+   },
+   {
+      name = 'Xmind',
+      im = 'CN'
+   },
+   {
+      name = 'MacDown',
       im = 'CN'
    }
 }
