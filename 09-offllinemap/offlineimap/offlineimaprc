@@ -1,0 +1,27 @@
+[general]
+pythonfile = ~/.offlineimap.py
+accounts = RisingLambda
+maxsyncaccounts = 2
+
+
+
+[Account RisingLambda]
+localrepository = LocalRisingLambda
+remoterepository = RepositoryRisingLambda
+autorefresh = 5
+quick = 10
+postsynchook = mu index --maildir ~/.mails
+proxy = SOCKS5:127.0.0.1:1088
+
+
+[Repository LocalRisingLambda]
+type = Maildir
+localfolders = ~/.mails/rising.lambda
+
+[Repository RepositoryRisingLambda]
+type = Gmail
+maxconnections = 2
+remoteuser = "rising.lambda"
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
+remotepasseval=mailpasswd("rising.lambda@gmail.com")
+sslcacertfile = /usr/local/etc/openssl/cert.pem
