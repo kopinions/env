@@ -162,3 +162,4 @@ fi
 if [ -f '/Users/morpheus/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/morpheus/google-cloud-sdk/completion.zsh.inc'; fi
 
 alias emcasclient="emacsclient -nw"
+source $HOME/.rvm/scripts/rvm
