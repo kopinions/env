@@ -409,6 +409,9 @@ svr =
                elseif (payload.type == "UNFOCUSED") then
                   payload.title = "休息"
                   pomodoro:unfocused(payload)
+	       elseif (payload.type == "UNFOCUS") then
+	          payload.title = "任务终止"
+		  pomodoro:unfocus(payload)
                else
                   pomodoro:focus()
                end

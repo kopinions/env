@@ -53,18 +53,11 @@ function pomodoro:show(text)
 end
 
 function dnd()
-
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
    hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, true):post()
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.space, true):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, true):post()
 
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.space, false):post()
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.shift, false):post()
+   hs.eventtap.event.newKeyEvent(hs.keycodes.map.f15, false):post()
    hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
-   hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
 end
 
 function pomodoro:focused(config)
@@ -103,6 +96,17 @@ function pomodoro:focus()
       function()
          local emacs = hs.appfinder.appFromName("Emacs")
          local agenda = function(app)
+
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+            hs.eventtap.event.newKeyEvent("g", true):post(app)
+            hs.eventtap.event.newKeyEvent("g", false):post(app)
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+
+	    hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
+            hs.eventtap.event.newKeyEvent("g", true):post(app)
+            hs.eventtap.event.newKeyEvent("g", false):post(app)
+            hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post(app)
+
             hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post(app)
             hs.eventtap.event.newKeyEvent("c", true):post(app)
             hs.eventtap.event.newKeyEvent("c", false):post(app)
@@ -142,7 +146,24 @@ function pomodoro:focus()
       }
    ):send()
 end
-function pomodoro:unfocus()
+
+
+function pomodoro:unfocus(config)
+   if(self.timer ~= nil) then
+      self.timer:stop()
+   end
+   local tick = tonumber(config.duration) * 60
+   self.timer = hs.timer.doUntil(
+      function()
+         return tick <= 0
+      end,
+      function()
+         tick = tick - 1
+         pomodoro.show(self, config.title .. "[" .. math.floor(tick/60) .. ":" .. string.format("%02d", tick % 60) .. "]")
+      end,
+      1
+   ):fire():start()
+   dnd()
 end
 
 function pomodoro:unfocused(config)
