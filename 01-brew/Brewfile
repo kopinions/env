@@ -59,6 +59,7 @@ cask 'qq'
 cask "mactex-no-gui"
 # terminal apps
 ## network
+brew 'inetutils'
 brew 'telnet'
 brew 'nmap'
 brew 'axel' # multiple thread downloader
