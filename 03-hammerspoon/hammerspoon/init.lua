@@ -1,7 +1,7 @@
 hs.loadSpoon("SpoonInstall")
 spoon.SpoonInstall.use_syncinstall = true
 require('functions')
-
+hs.application.enableSpotlightForNameSearches(true)
 Install=spoon.SpoonInstall
 
 log = hs.logger.new('init.lua', 'debug')
@@ -92,15 +92,13 @@ hotkeys = {
          }
       },
       default = function()
-         local snipaste = hs.appfinder.appFromName("Snipaste")
+      	 local snipaste = hs.appfinder.appFromName("Snipaste")
          if (snipaste == nil) then
             snipaste = hs.application.open("Snipaste")
          end
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, true):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, true):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.f13, true):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.f13, false):post()
-         hs.eventtap.event.newKeyEvent(hs.keycodes.map.ctrl, false):post()
          hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, false):post()
       end
    },
