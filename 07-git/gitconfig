@@ -8,6 +8,13 @@
 	quotepath = false
 	pager = less -F -X
 	excludesfile = ~/.gitignore
+[color]
+	ui = true
+[push]
+	default = simple
 [github]
 	user = sjkyspa
 	oauth-token = token
+[credential]
+	helper = store
+	helper = store
