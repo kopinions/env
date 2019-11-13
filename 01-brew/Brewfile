@@ -23,7 +23,10 @@ cask 'appcleaner'
 cask 'cheatsheet'
 cask 'cleanmymac'
 brew 'mu'
-brew 'offlineimap', restart_service: :changde
+brew 'offlineimap', restart_service: :changed
+
+# video processing
+cask 'handbrake'  # 视屏压缩
 
 # editor
 cask 'sublime-text'
