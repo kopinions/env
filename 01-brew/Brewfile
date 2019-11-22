@@ -1,14 +1,19 @@
 # desktop applications 
 cask_args appdir: '/Applications'
-tap 'caskroom/cask'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/bundle
+
+brew "mas"
+
+# App Store
+mas "Reeder3", id: 880001334
+mas "ReadKit", id: 588726889
 
 # system
 cask 'docker'
 cask 'java8'
 cask 'iterm2'
-cask 'sogouinput'
-cask 'shadowsocksx-ng'
+cask 'squirrel'
 cask 'snipaste'
 # usb network sharing driver
 cask 'horndis'
@@ -31,13 +36,13 @@ cask 'handbrake'  # 视屏压缩
 # editor
 cask 'sublime-text'
 cask 'macdown'
-brew 'emacs'
+cask 'emacs'
 cask 'arduino'
 
 # storage
 cask 'baidunetdisk'
 cask 'baiducloud'
-cask 'evernote'
+cask 'yinxiangbiji'
 cask 'dash'
 cask 'thunder'
 cask '1password'
@@ -57,13 +62,13 @@ cask 'vlc'
 
 # communication
 cask 'qq'
+cask 'wechat'
 
 # emacs
 cask "mactex-no-gui"
 # terminal apps
 ## network
 brew 'inetutils'
-brew 'telnet'
 brew 'nmap'
 brew 'axel' # multiple thread downloader
 brew 'iperf'
