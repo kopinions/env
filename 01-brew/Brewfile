@@ -1,7 +1,6 @@
-# desktop applications 
 cask_args appdir: '/Applications'
 tap 'homebrew/cask'
-tap 'homebrew/bundle
+tap 'homebrew/bundle'
 
 brew "mas"
 
@@ -19,6 +18,17 @@ cask 'snipaste'
 cask 'horndis'
 brew 'ruby'
 
+# ides
+cask 'eclipse-ide'
+cask 'clion'
+cask 'android-studio'
+cask 'visual-studio-code'
+cask 'android-platform-tools'
+
+
+# virtualization
+cask 'parallels'
+
 # productivity
 cask 'alfred'
 cask 'xmind'
@@ -29,6 +39,7 @@ cask 'cheatsheet'
 cask 'cleanmymac'
 brew 'mu'
 brew 'offlineimap', restart_service: :changed
+cask 'postman'
 
 # video processing
 cask 'handbrake'  # 视屏压缩
@@ -41,11 +52,13 @@ cask 'arduino'
 
 # storage
 cask 'baidunetdisk'
+cask 'box-sync'
 cask 'baiducloud'
 cask 'yinxiangbiji'
 cask 'dash'
 cask 'thunder'
 cask '1password'
+cask 'nutstore'
 
 # broswer
 cask 'firefox'
@@ -63,6 +76,7 @@ cask 'vlc'
 # communication
 cask 'qq'
 cask 'wechat'
+cask 'aliwangwang'
 
 # emacs
 cask "mactex-no-gui"
@@ -101,3 +115,6 @@ brew 'zplug'
 
 # other
 cask 'logitech-options'
+
+# design
+cask 'zeplin'
