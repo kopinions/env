@@ -11,6 +11,27 @@ windows.use_frame_correctness = true
 
 hotkeys = {
    {
+      mods = {'alt'},
+      key = 'space',
+      specs = {
+	 {
+	    name = "Parallels Desktop",
+	    fn = function()	       
+	       hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
+	       hs.eventtap.event.newKeyEvent("space", true):post(app)
+               hs.eventtap.event.newKeyEvent("space", false):post(app)
+	       hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
+	    end
+	 },
+      },
+      default = function()
+	 hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f14, true):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.f14, false):post()
+         hs.eventtap.event.newKeyEvent(hs.keycodes.map.alt, false):post()
+      end
+   },
+   {
       mods = {'cmd'},
       key = 'space',
       specs = {
@@ -302,7 +323,6 @@ function hks(name, etype, app)
       for k, v in pairs(hotkeys) do
          hs.hotkey.deleteAll(v.mods, v.key)
       end
-
       for k, v in pairs (hotkeys) do
          local hk = filter(
             function(item)
@@ -358,6 +378,10 @@ apps = {
    },
    {
       name = 'MacDown',
+      im = 'CN'
+   },
+   {
+      name = 'Microsoft Word',
       im = 'CN'
    }
 }
@@ -423,3 +447,16 @@ svr =
    )()
 
 hs.notify.new({title='Hammerspoon', informativeText='Ready to rock 🤘'}):send()
+
+
+function moveWindowToDisplay(d)
+  return function()
+    local displays = hs.screen.allScreens()
+    local win = hs.window.focusedWindow()
+    win:moveToScreen(displays[d], false, true)
+  end
+end
+
+hs.hotkey.bind({"ctrl", "alt", "cmd"}, "1", moveWindowToDisplay(1))
+hs.hotkey.bind({"ctrl", "alt", "cmd"}, "2", moveWindowToDisplay(2))
+hs.hotkey.bind({"ctrl", "alt", "cmd"}, "3", moveWindowToDisplay(3))
